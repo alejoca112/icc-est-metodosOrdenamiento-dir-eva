@@ -1,13 +1,22 @@
 import models.Car;
-
+import controllers.CarController;
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
+        
+
+        
+        
+        
     }
-
-    public static Car[] makeCarsList() {
+    
+     public static Car[] makeCarsList() {
+        CarController carCon = new CarController();
         Car[] cars = new Car[20];
-
+        carCon.sortByName(cars);
+        carCon.printArray(cars);
+        carCon.sortByName(cars);
+        carCon.printArray(cars);
         cars[0] = new Car("Toyota", 2020);
         cars[1] = new Car("TOYOTA", 2018);
         cars[2] = new Car("toyota", 2022);
@@ -30,6 +39,8 @@ public class App {
         cars[19] = new Car("nissan-sentra", 2018);
 
         return cars;
-    }
+    }   
+
+    
 
 }
